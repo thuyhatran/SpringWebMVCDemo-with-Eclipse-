@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.AbstractController;
  * @author Administrator
  */
 @Controller
+@RequestMapping("/greet")
 public class HelloController /*extends AbstractController*/{
 
 //    @Override
@@ -48,7 +49,7 @@ public class HelloController /*extends AbstractController*/{
 		model.addObject("welcomeMessage","Root World");
 		return model;
 	}
-	
+
 	
       
 }
