@@ -47,14 +47,28 @@ public class HelloController /*extends AbstractController*/{
 		return model;
 	}
 	
+//	@RequestMapping("/hi/{countryName}/{cityName}/{userName}")
+//	public ModelAndView hiWorld(@PathVariable("countryName") String country, @PathVariable("cityName") String city, 
+//					@PathVariable("userName") String user){
+//				
+//		ModelAndView model = new ModelAndView("index");
+//		model.addObject("welcomeMessage","Hi " + user + ". You are from " + city + ", " + country);
+//		return model;
+//	}
+	
 	@RequestMapping("/hi/{countryName}/{cityName}/{userName}")
-	public ModelAndView hiWorld(@PathVariable("countryName") String country, @PathVariable("cityName") String city, 
-					@PathVariable("userName") String user){
+	public ModelAndView hiWorld(@PathVariable Map<String,String> pathVars){
+		
+		String user = pathVars.get("userName");
+		String city = pathVars.get("cityName");
+		String country = pathVars.get("countryName");
 				
 		ModelAndView model = new ModelAndView("index");
 		model.addObject("welcomeMessage","Hi " + user + ". You are from " + city + ", " + country);
 		return model;
 	}
+	
+	
 	
 	@RequestMapping("/")
 	public ModelAndView rootWorld(){
