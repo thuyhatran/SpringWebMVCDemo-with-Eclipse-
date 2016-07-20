@@ -11,15 +11,11 @@
 
    
     
-     <bean id="HandleMapping"
-          class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"  />
-    
-    <bean name ="/welcome.html"
-        class="com.mc.controller.HelloController" />
+
     
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/"
+          p:prefix="/WEB-INF/view/"
           p:suffix=".jsp" />
 
 </beans>

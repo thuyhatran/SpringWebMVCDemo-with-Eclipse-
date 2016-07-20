@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Meassge 2: </h1>
+<h1>Meassge:  ${welcomeMessage}</h1>
 
 </body>
 </html>
