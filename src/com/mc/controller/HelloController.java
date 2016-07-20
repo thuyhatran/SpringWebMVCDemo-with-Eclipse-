@@ -47,10 +47,12 @@ public class HelloController /*extends AbstractController*/{
 		return model;
 	}
 	
-	@RequestMapping("/hi")
-	public ModelAndView hiWorld(){
+	@RequestMapping("/hi/{countryName}/{cityName}/{userName}")
+	public ModelAndView hiWorld(@PathVariable("countryName") String country, @PathVariable("cityName") String city, 
+					@PathVariable("userName") String user){
+				
 		ModelAndView model = new ModelAndView("index");
-		model.addObject("welcomeMessage","Hi World");
+		model.addObject("welcomeMessage","Hi " + user + ". You are from " + city + ", " + country);
 		return model;
 	}
 	
